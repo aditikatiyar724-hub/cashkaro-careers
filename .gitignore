@@ -1,0 +1,6 @@
+# Working files the site doesn't use
+Screen Recording*.mov
+*.mp4
+Frame 2147229504.svg
+.DS_Store
+.claude/

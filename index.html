@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Careers at CashKaro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600&family=Handlee&family=Quicksand:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Hide the headline before first paint; scribble.js writes it on
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("is-scribbling");
+    }
+  </script>
+</head>
+<body>
+  <main class="page">
+    <!-- CashKaro site header (Figma 255:31352) -->
+    <header class="ck-header">
+      <div class="ck-header__start">
+        <button class="ck-header__menu" type="button" aria-label="Menu"><img src="assets/ck-menu.svg" alt="" /></button>
+        <a class="ck-header__logo" href="https://cashkaro.com"><img src="assets/ck-logo.svg" alt="CashKaro" /></a>
+        <form class="ck-header__search" role="search">
+          <label class="visually-hidden" for="ck-query">Search CashKaro</label>
+          <img class="ck-header__search-icon" src="assets/ck-search.svg" alt="" />
+          <input id="ck-query" type="search" placeholder="Search for any brand or product" autocomplete="off" />
+        </form>
+      </div>
+      <nav class="ck-header__end">
+        <a class="ck-header__help" href="#">Help</a>
+        <a class="ck-header__login" href="#"><img src="assets/ck-account.svg" alt="" />Login / Sign up</a>
+      </nav>
+    </header>
+    <div class="hero-track">
+      <!-- Background stack: pinned while the content scrolls over it -->
+      <div class="hero__bg">
+      <img class="hero__grid" src="assets/bg-grid.png" alt="" />
+      <div class="hero__fade"></div>
+      <img class="hero__ellipse" src="assets/bg-ellipse.svg" alt="" />
+      <img class="hero__top-glow" src="assets/bg-top-glow.svg" alt="" />
+      <img class="hero__vignette" src="assets/bg-vignette.svg" alt="" />
+      <div class="hero__rig hero__rig--shadows">
+        <img class="hero__beams" src="assets/bg-beams.svg" alt="" />
+        <img class="hero__beams hero__beams--next" src="assets/bg-beams.svg" alt="" />
+      </div>
+      <div class="hero__rig-light">
+        <div class="hero__rig hero__rig--light">
+          <svg class="hero__beams" viewBox="0 0 3048.39 1776.1" aria-hidden="true">
+            <defs>
+              <linearGradient id="ray-fill" x1="0" y1="250" x2="0" y2="1550" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#cfe2ff" stop-opacity="0.4" />
+                <stop offset="0.55" stop-color="#cfe2ff" stop-opacity="0.12" />
+                <stop offset="1" stop-color="#cfe2ff" stop-opacity="0" />
+              </linearGradient>
+              <filter id="ray-blur" x="-20%" y="-20%" width="140%" height="160%">
+                <feGaussianBlur stdDeviation="38" />
+              </filter>
+            </defs>
+            <!-- Light shafts fill the gaps between the shadow beams -->
+            <g fill="url(#ray-fill)" filter="url(#ray-blur)">
+              <path d="M1019.45 242.43L1152.4 295.27L683.19 1486.33L460.13 1383.01Z" />
+              <path d="M1307 348.16L1431.95 347.31L1327.01 1637.79L1058.04 1614.57Z" />
+              <path d="M1593.87 347.31L1717.46 374.08L1917.8 1650.86L1719.62 1637.79Z" />
+              <path d="M1873.95 328.37L2050.19 366.38L2583.57 1521.87L2297.22 1540.03Z" />
+            </g>
+            <!-- Next set of shafts, one fan-width to the right, drifts in as the first leaves -->
+            <g class="hero__beams-next" transform="rotate(-77 1524.56 -719.1)" fill="url(#ray-fill)" filter="url(#ray-blur)">
+              <path d="M1019.45 242.43L1152.4 295.27L683.19 1486.33L460.13 1383.01Z" />
+              <path d="M1307 348.16L1431.95 347.31L1327.01 1637.79L1058.04 1614.57Z" />
+              <path d="M1593.87 347.31L1717.46 374.08L1917.8 1650.86L1719.62 1637.79Z" />
+              <path d="M1873.95 328.37L2050.19 366.38L2583.57 1521.87L2297.22 1540.03Z" />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="hero__dim"></div>
+      </div>
+
+    <section class="hero">
+      <!-- Headline -->
+      <h1 class="headline">
+        <span class="visually-hidden">Make Your Ambitions Happen</span>
+        <img class="headline__glow headline__glow--1" src="assets/headline-glow-1.svg" alt="" />
+        <img class="headline__line headline__line--1" src="assets/headline-line-1.png" alt="" />
+        <img class="headline__glow headline__glow--2" src="assets/headline-glow-2.svg" alt="" />
+        <img class="headline__line headline__line--2" src="assets/headline-line-2.png" alt="" />
+      </h1>
+
+      <!-- Search -->
+      <form class="search" role="search" onsubmit="return false;">
+        <label class="search__field">
+          <span class="visually-hidden">Search by designation</span>
+          <input class="search__input" type="text" name="designation" placeholder="Search by designation" />
+        </label>
+        <button class="search__button" type="submit">Search</button>
+      </form>
+
+      <div class="openings">
+        <p class="openings-label">Current JOB Openings</p>
+      </div>
+
+      <!-- Job card row -->
+      <div class="job-card-slot job-card-slot--back-right" aria-hidden="true">
+        <div class="job-card job-card--back">
+          <div class="job-card__body">
+            <div class="job-card__head">
+              <p class="job-card__category">ENGINEERING</p>
+              <p class="job-card__title">Senior Backend Engineer</p>
+            </div>
+            <div class="job-card__meta">
+              <span>Full time</span>
+              <img src="assets/card-divider.svg" alt="" />
+              <span>Gurugram</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="job-card-slot job-card-slot--back-left" aria-hidden="true">
+        <div class="job-card job-card--back">
+          <div class="job-card__body">
+            <div class="job-card__head">
+              <p class="job-card__category">PRODUCT &amp; GROWTH</p>
+              <p class="job-card__title">Senior Product Manager</p>
+            </div>
+            <div class="job-card__meta">
+              <span>Full time</span>
+              <img src="assets/card-divider.svg" alt="" />
+              <span>Delhi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="job-card job-card--front" href="#">
+        <div class="job-card__body">
+          <div class="job-card__head">
+            <p class="job-card__category">PRODUCT &amp; GROWTH</p>
+            <p class="job-card__title">Growth Marketing Manager</p>
+          </div>
+          <div class="job-card__meta">
+            <span>Full time</span>
+            <img src="assets/card-divider.svg" alt="" />
+            <span>Gurugram</span>
+          </div>
+        </div>
+      </a>
+      <!-- Second row: fades in when scrolled into view (reveal.js) -->
+      <div class="job-row">
+        <a class="job-card job-card--row-left" href="#">
+          <div class="job-card__body">
+            <div class="job-card__head">
+              <p class="job-card__category">ENGINEERING</p>
+              <p class="job-card__title">Frontend Engineer</p>
+            </div>
+            <div class="job-card__meta">
+              <span>Full time</span>
+              <img src="assets/card-divider.svg" alt="" />
+              <span>Gurugram</span>
+            </div>
+          </div>
+        </a>
+        <a class="job-card job-card--row-centre" href="#">
+          <div class="job-card__body">
+            <div class="job-card__head">
+              <p class="job-card__category">DESIGN</p>
+              <p class="job-card__title">Senior Product Designer</p>
+            </div>
+            <div class="job-card__meta">
+              <span>Full time</span>
+              <img src="assets/card-divider.svg" alt="" />
+              <span>Gurugram</span>
+            </div>
+          </div>
+        </a>
+        <a class="job-card job-card--row-right" href="#">
+          <div class="job-card__body">
+            <div class="job-card__head">
+              <p class="job-card__category">BUSINESS</p>
+              <p class="job-card__title">Affiliate Partnerships Lead</p>
+            </div>
+            <div class="job-card__meta">
+              <span>Full time</span>
+              <img src="assets/card-divider.svg" alt="" />
+              <span>Delhi</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <a class="view-jobs" href="jobs.html">View all Jobs</a>
+    </section>
+    </div>
+
+    <!-- Torn paper: rises over the pinned background once the card grid has scrolled past -->
+    <section class="paper">
+      <svg class="paper__tear" viewBox="0 -120 1440 280" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <!-- Burning edge: a warm glow and glinting flecks hugging the top of the tear
+               (no roughening, so it lines up with the sheet's clip edge) -->
+          <filter id="tear-burn" x="-2%" y="-60%" width="104%" height="220%" color-interpolation-filters="sRGB">
+            <feMorphology in="SourceGraphic" operator="dilate" radius="2" result="fat2" />
+            <feComposite in="fat2" in2="SourceGraphic" operator="out" result="line" />
+            <feMorphology in="SourceGraphic" operator="dilate" radius="7" result="fat7" />
+            <feComposite in="fat7" in2="SourceGraphic" operator="out" result="band" />
+            <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="1" seed="5" />
+            <feOffset class="paper__burn-drift" dx="0" dy="0" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1 0 0 0 0" />
+            <feComponentTransfer result="flecks">
+              <feFuncA type="discrete" tableValues="0 0 0 1 1" />
+            </feComponentTransfer>
+            <feComposite in="band" in2="flecks" operator="in" result="bandFlecks" />
+            <feFlood flood-color="#ff8a2a" flood-opacity="0.55" />
+            <feComposite in2="band" operator="in" />
+            <feGaussianBlur stdDeviation="4" result="ember" />
+            <feFlood flood-color="#ffd27a" flood-opacity="0.95" />
+            <feComposite in2="line" operator="in" />
+            <feGaussianBlur stdDeviation="0.7" result="hotLine" />
+            <feFlood flood-color="#fff3cf" />
+            <feComposite in2="bandFlecks" operator="in" result="sparkCore" />
+            <feGaussianBlur in="sparkCore" stdDeviation="1.4" result="sparkGlow" />
+            <feMerge>
+              <feMergeNode in="ember" />
+              <feMergeNode in="hotLine" />
+              <feMergeNode in="sparkGlow" />
+              <feMergeNode in="sparkCore" />
+            </feMerge>
+          </filter>
+          <!-- Torn edge (paper.js burns it forward); only its glow is drawn -->
+          <!-- Cuts the sheet to the torn top edge (paper.js burns this and the glow forward together) -->
+          <clipPath id="sheet-clip" clipPathUnits="objectBoundingBox">
+            <path class="paper__sheet-edge" d="M-0.01389 0.02533 L0.00660 0.02667 L0.01361 0.02838 L0.01660 0.02683 L0.02542 0.02673 L0.02965 0.02934 L0.03569 0.02894 L0.04174 0.02895 L0.04535 0.02918 L0.05437 0.02780 L0.06243 0.02792 L0.06542 0.02813 L0.07236 0.02600 L0.07507 0.02800 L0.08111 0.02638 L0.09021 0.02657 L0.09965 0.02574 L0.10812 0.02419 L0.11764 0.02594 L0.12090 0.02189 L0.12500 0.02583 L0.13076 0.02456 L0.13556 0.02385 L0.14090 0.02292 L0.14785 0.02370 L0.15708 0.02451 L0.16660 0.02594 L0.17653 0.02412 L0.18021 0.02486 L0.18993 0.02680 L0.19674 0.02675 L0.20083 0.02652 L0.20764 0.02464 L0.21063 0.02735 L0.22049 0.02373 L0.22903 0.02516 L0.23264 0.02463 L0.24090 0.02747 L0.24375 0.02595 L0.24660 0.02612 L0.25160 0.02756 L0.26139 0.02652 L0.27139 0.02419 L0.27451 0.02601 L0.27722 0.02389 L0.28278 0.02617 L0.28646 0.02347 L0.29549 0.02366 L0.30514 0.02560 L0.31049 0.02365 L0.31688 0.02531 L0.32389 0.02496 L0.33097 0.02610 L0.33729 0.02483 L0.34521 0.02434 L0.35000 0.02813 L0.35639 0.02553 L0.35896 0.02688 L0.36583 0.02462 L0.37292 0.02724 L0.37590 0.02699 L0.38187 0.02800 L0.38701 0.02805 L0.39507 0.02493 L0.39799 0.02707 L0.40771 0.02566 L0.41368 0.02683 L0.41854 0.02473 L0.42340 0.02506 L0.43035 0.02471 L0.43569 0.02487 L0.43840 0.02338 L0.44639 0.02163 L0.45056 0.02397 L0.45486 0.02121 L0.46062 0.02302 L0.46389 0.02111 L0.46889 0.02121 L0.47472 0.02061 L0.47847 0.01856 L0.48583 0.01978 L0.49174 0.01807 L0.49514 0.01926 L0.49910 0.02012 L0.50785 0.01616 L0.51243 0.01950 L0.51972 0.01816 L0.52486 0.01585 L0.52951 0.01881 L0.53410 0.01584 L0.53972 0.01608 L0.54528 0.01939 L0.54896 0.01494 L0.55854 0.01820 L0.56840 0.01696 L0.57806 0.01875 L0.58222 0.01663 L0.59097 0.01673 L0.59736 0.01536 L0.60243 0.01506 L0.60542 0.01565 L0.61007 0.01705 L0.61292 0.01802 L0.62062 0.01659 L0.62986 0.01648 L0.63667 0.01219 L0.64479 0.01290 L0.64951 0.01543 L0.65597 0.01336 L0.66549 0.01581 L0.67056 0.01472 L0.67951 0.01423 L0.68792 0.01602 L0.69188 0.01581 L0.70049 0.01601 L0.70896 0.01944 L0.71750 0.01893 L0.72007 0.01925 L0.72903 0.01794 L0.73354 0.01943 L0.74000 0.01941 L0.74604 0.02214 L0.74854 0.02012 L0.75201 0.01999 L0.75500 0.02292 L0.76396 0.01927 L0.77021 0.02105 L0.77507 0.02100 L0.78243 0.02266 L0.78764 0.02115 L0.79257 0.02064 L0.79924 0.02188 L0.80458 0.02048 L0.80847 0.02142 L0.81549 0.02180 L0.82083 0.02322 L0.82799 0.02126 L0.83326 0.02032 L0.84104 0.02166 L0.84875 0.02017 L0.85313 0.02085 L0.86083 0.02011 L0.86653 0.02124 L0.87563 0.02327 L0.88090 0.02351 L0.88938 0.02114 L0.89535 0.02058 L0.90389 0.02254 L0.91306 0.02310 L0.92056 0.02438 L0.92729 0.02229 L0.93424 0.02154 L0.93778 0.02471 L0.94063 0.02145 L0.94389 0.02405 L0.94771 0.02114 L0.95653 0.02227 L0.96535 0.02227 L0.97410 0.02389 L0.98097 0.02251 L0.98375 0.02335 L0.99007 0.02209 L0.99340 0.02204 L1.00000 0.02219 L1 1 L0 1 Z" />
+          </clipPath>
+          <path id="tear-body-path" class="paper__body" d="M-20 220 L-20 98.18911598623502 L9.5 103.39397494014636 L19.6 110.01181877734794 L23.9 104.02447464927064 L36.6 103.63700850000082 L42.7 113.73817953145343 L51.4 112.19972864712126 L60.1 112.22784784436901 L65.3 113.12834647551915 L78.3 107.74983959513283 L89.9 108.23977079388222 L94.2 109.07311727635651 L104.2 100.802275869646 L108.1 108.54574121036019 L116.8 102.26608389468934 L129.9 103.00247688503647 L143.5 99.78445165929135 L155.7 93.80265097877995 L169.4 100.57927200598068 L174.1 84.88496393056339 L180.0 100.12670488169222 L188.3 95.2489281761542 L195.2 92.49084648632598 L202.9 88.83673661265131 L212.9 91.86976713872997 L226.2 95.04362403160644 L239.9 100.57921035811634 L254.2 93.49461918846269 L259.5 96.36688584673156 L273.5 103.88523846170314 L283.3 103.73291504971021 L289.2 102.83803106252503 L299.0 95.54442820468356 L303.3 106.05128512728841 L317.5 91.9888882718256 L329.8 97.53885889959648 L335.0 95.49343869367571 L346.9 106.48493852112402 L351.0 100.61878022758896 L355.1 101.25844140359706 L362.3 106.82905926335063 L376.4 102.82740443822952 L390.8 93.76690906711728 L395.3 100.84266633124913 L399.2 92.60560544700772 L407.2 101.42911578324878 L412.5 90.9771864881369 L425.5 91.73738816317373 L439.4 99.24083902282878 L447.1 91.68499805141053 L456.3 98.1359169247208 L466.4 96.76200082305814 L476.6 101.17798193513684 L485.7 96.2837628506914 L497.1 94.37633724704955 L504.0 109.0936364092709 L513.2 98.94888104310137 L516.9 104.22974345073412 L526.8 95.43671889910034 L537.0 105.592005133972 L541.3 104.64442366245491 L549.9 108.57689388404816 L557.3 108.77292095735054 L568.9 96.65696997808041 L573.1 104.95039454655584 L587.1 99.46567215158788 L595.7 104.05319155142041 L602.7 95.90209847588034 L609.7 97.16870753060883 L619.7 95.78207097326793 L627.4 96.43916166489677 L631.3 90.6368120724552 L642.8 83.8782297759205 L648.8 92.94150686128931 L655.0 82.2028065245905 L663.3 89.26971756323408 L668.0 81.83105208004548 L675.2 82.23673443139626 L683.6 79.91698534344441 L689.0 71.96898421868562 L699.6 76.69748597275664 L708.1 70.03787452430386 L713.0 74.66876452188251 L718.7 77.99807999931434 L731.3 62.640063450915186 L737.9 75.62079150945081 L748.4 70.40733406443997 L755.8 61.48636231964577 L762.5 72.93174746029958 L769.1 61.38740332829759 L777.2 62.34113865281199 L785.2 75.17143314562745 L790.5 57.934107103116844 L804.3 70.55328867747528 L818.5 65.74240036810005 L832.4 72.70405889371884 L838.4 64.45506956752445 L851.0 64.87841549703298 L860.2 59.589770733098725 L867.5 58.38720423447885 L871.8 60.68077013756653 L878.5 66.08084315910156 L882.6 69.84269843637843 L893.7 64.32735999378117 L907.0 63.85485227816186 L916.8 47.25341359873717 L928.5 49.99808996178174 L935.3 59.823464419398384 L944.6 51.80023204317207 L958.3 61.29751209780478 L965.6 57.07009601896574 L978.5 55.17524522111943 L990.6 62.130300360959914 L996.3 61.2937872694986 L1008.7 62.07935397436815 L1020.9 75.35858662428926 L1033.2 73.36427221673141 L1036.9 74.60709755837719 L1049.8 69.53262697125791 L1056.3 75.34844000442925 L1065.6 75.2247339312533 L1074.3 85.8335175361901 L1077.9 77.99061090579809 L1082.9 77.4826004008083 L1087.2 88.88933844123366 L1100.1 74.7063684145738 L1109.1 81.65104578189153 L1116.1 81.41726217624682 L1126.7 87.8447464641585 L1134.2 82.02835073041284 L1141.3 80.0311313713946 L1150.9 84.85583830152956 L1158.6 79.36534243406055 L1164.2 83.04707551893841 L1174.3 84.53283536260004 L1182.0 90.01935400485888 L1192.3 82.44297049368845 L1199.9 78.78504657198285 L1211.1 83.95475265740045 L1222.2 78.23107400660577 L1228.5 80.85223930150138 L1239.6 77.96381895837717 L1247.8 82.37946236253603 L1260.9 90.23939061764277 L1268.5 91.17989445846695 L1280.7 81.96163083805874 L1289.3 79.7995418061144 L1301.6 87.41104982527895 L1314.8 89.54877019568806 L1325.6 94.52668350823146 L1335.3 86.43584352455916 L1345.3 83.54508100604164 L1350.4 95.8171096916112 L1354.5 83.173778766385 L1359.2 93.22676854555864 L1364.7 81.9670374663754 L1377.4 86.38032147506021 L1390.1 86.33688661329144 L1402.7 92.63769435115266 L1412.6 87.27757033678567 L1416.6 90.55121105401047 L1425.7 85.632874946311 L1430.5 85.46290110022088 L1440 86.02671088267755 L1460 220 Z" />
+        </defs>
+        <g class="paper__burn" filter="url(#tear-burn)">
+          <use href="#tear-body-path" />
+        </g>
+      </svg>
+      <!-- Sheet below the torn top edge (#sheet-clip), showing Why and About CashKaro; ends straight after About CashKaro -->
+      <div class="paper__sheet">
+        <!-- Why CashKaro (Figma 201:23021): first on the sheet, its white top fading out under the torn edge; About CashKaro follows -->
+        <div class="why">
+          <div class="why__photo" aria-hidden="true"><img src="assets/why2-store.jpg" alt="" /></div>
+          <!-- Burning torn edge along the bottom of the photo: the white below it climbs into the photo as the user
+               scrolls and the edge burns forward (tear.js), with the hero tear's #tear-burn glow -->
+          <svg class="why__tear" viewBox="0 0 1440 440" preserveAspectRatio="none" aria-hidden="true">
+            <path class="why__tear-body" d="" />
+            <use class="why__tear-burn" href="#why-tear-path" filter="url(#tear-burn)" />
+            <defs><path id="why-tear-path" d="" /></defs>
+          </svg>
+          <!-- White fade along the top (Figma "Rectangle 34629107", flipped) so the photo melts out of the white paper -->
+          <div class="why__fade" aria-hidden="true"></div>
+          <!-- Frosted card tilted behind the white one -->
+          <div class="why__card-back" aria-hidden="true"></div>
+          <div class="why__card">
+            <!-- "About Cashkaro" title art (from About, Figma 191:19902), scaled down to the card's text width -->
+            <h2 class="why__title">
+              <span class="visually-hidden">About Cashkaro</span>
+              <img class="why__title-art" src="assets/about2-title.svg" alt="" />
+            </h2>
+            <p class="why__text"><span class="why__initial">C</span><span class="why__brand">ashkaro</span> is the largest Cashback &amp; Coupons site in India, backed my marquee investors like Mr. Ratan Tata, Kalaari Capital &amp; Korea Investment Partners. We are also redefining social commerce with India's 1st Social Cashback app called EarnKaro, and with the launch of our CASHKARO Store Network in 22 states of India.</p>
+          </div>
+        </div>
+        <!-- Why CashKaro, core values (Figma 230:29833 on the 216:25415 sky): follows About CashKaro; pins once it reaches
+             the top, and scrolling down then slides the heading and value cards sideways together (values.js) -->
+        <div class="values">
+          <div class="values__pin">
+            <div class="values__frame">
+              <!-- Figma "image 6345092" (216:25417): sky and clouds, faded to white at the edges and along the top -->
+              <div class="values__sky" aria-hidden="true"><img src="assets/about3-sky.png" alt="" /></div>
+              <!-- Heading and cards slide left together as one row -->
+              <div class="values__row">
+                <div class="values__heading">
+                  <p class="values__eyebrow">Core Values</p>
+                  <h2 class="values__title">Why CashKaro</h2>
+                </div>
+                <ul class="values__track">
+                    <li class="value-card">
+                      <img class="value-card__ticket" src="assets/values-ticket-1.svg" alt="" />
+                      <div class="value-card__photo"><img src="assets/values-photo.png" alt="" /></div>
+                      <div class="value-card__body">
+                        <h3 class="value-card__title">Growth</h3>
+                        <p class="value-card__text">Fast-track your career in a<br />high-velocity environment and reach new professional heights.</p>
+                      </div>
+                    </li>
+                    <li class="value-card">
+                      <img class="value-card__ticket" src="assets/values-ticket-2.svg" alt="" />
+                      <div class="value-card__photo"><img src="assets/values-photo.png" alt="" /></div>
+                      <div class="value-card__body">
+                        <h3 class="value-card__title">Ownership</h3>
+                        <p class="value-card__text">You own your projects<br />from ideation to execution<br />with full autonomy.</p>
+                      </div>
+                    </li>
+                    <li class="value-card">
+                      <img class="value-card__ticket" src="assets/values-ticket-3.svg" alt="" />
+                      <div class="value-card__photo"><img src="assets/values-photo.png" alt="" /></div>
+                      <div class="value-card__body">
+                        <h3 class="value-card__title">Impact</h3>
+                        <p class="value-card__text">Directly influence how<br />millions of users save money every single day.</p>
+                      </div>
+                    </li>
+                    <li class="value-card">
+                      <img class="value-card__ticket" src="assets/values-ticket-2.svg" alt="" />
+                      <div class="value-card__photo"><img src="assets/values-photo.png" alt="" /></div>
+                      <div class="value-card__body">
+                        <h3 class="value-card__title">Learning</h3>
+                        <p class="value-card__text">Access to world-class<br />tools and continuous mentorship programs.</p>
+                      </div>
+                    </li>
+                    <li class="value-card">
+                      <img class="value-card__ticket" src="assets/values-ticket-3.svg" alt="" />
+                      <div class="value-card__photo"><img src="assets/values-photo.png" alt="" /></div>
+                      <div class="value-card__body">
+                        <h3 class="value-card__title">Culture</h3>
+                        <p class="value-card__text">Vibrant, diverse, and<br />unapologetically energetic<br />community.</p>
+                      </div>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Life at CashKaro: pinned under the paper, revealed by the torn bottom edge, then slides sideways
+         through the Figma strip (169:82, 3324 × 800 without the closing sky panel) as the user scrolls; each piece sits in a .life-layer that
+         drifts at its own depth for parallax (life.js) -->
+    <section class="life">
+      <div class="life__view">
+        <div class="life__strip">
+          <div class="life-layer" data-depth="-0.02">
+            <p class="life__text life__text--1 life-reveal">Cashkaro is the largest Cashback &amp; Coupons site in India, backed my marquee investors like Mr. Ratan Tata,</p>
+          </div>
+
+          <div class="life-layer" data-depth="0.02">
+            <div class="life-photo life-photo--diyas life-reveal life-float" style="--delay: 0.15s; --float: 6.5s"><div class="life-photo__inner"><img class="life-photo__img" src="assets/life2-diyas.png" alt="" /></div></div>
+          </div>
+          <div class="life-layer" data-depth="0.08">
+            <div class="life-photo-slot life-photo-slot--snacks life-reveal life-float" style="--delay: 0.3s; --float: 7.5s; --float-dir: reverse">
+              <div class="life-photo life-photo--snacks"><div class="life-photo__inner"><img class="life-photo__img" src="assets/life2-snacks.png" alt="" /></div></div>
+            </div>
+          </div>
+          <div class="life-layer" data-depth="0.05">
+            <p class="life__note life__note--1 life-reveal" style="--delay: 0.5s">Diwali Party</p>
+          </div>
+          <div class="life-layer" data-depth="0.05">
+            <div class="life__arrow life__arrow--1 life-reveal" style="--delay: 0.6s" aria-hidden="true"><span><img src="assets/life2-arrow.svg" alt="" /></span></div>
+          </div>
+
+          <!-- Second group (169:95–169:115) and its repeat one group-width (1202.93px) further along -->
+          <div class="life__group">
+            <div class="life-layer" data-depth="-0.02">
+              <p class="life__text life__text--2 life-reveal">Cashkaro is the largest Cashback &amp; Coupons site in India, backed my marquee investors like Mr. Ratan Tata, Kalaari Capital &amp; Korea Investment Partners. We are also redefining social commerce with</p>
+            </div>
+            <div class="life-layer" data-depth="0.05">
+              <div class="life-photo life-photo--plate life-reveal life-float" style="--delay: 0.15s; --float: 6s; --float-dir: reverse"><div class="life-photo__inner"><img class="life-photo__img" src="assets/life2-plate.png" alt="" /></div></div>
+            </div>
+            <div class="life-layer" data-depth="0.05">
+              <div class="life-photo life-photo--diyas-2 life-reveal life-float" style="--delay: 0.3s; --float: 7s"><div class="life-photo__inner"><img class="life-photo__img" src="assets/life2-diyas.png" alt="" /></div></div>
+            </div>
+            <div class="life-layer" data-depth="0.05">
+              <div class="life-photo life-photo--lotus life-reveal life-float" style="--delay: 0.45s; --float: 8s"><div class="life-photo__inner"><img class="life-photo__img" src="assets/life2-lotus.png" alt="" /></div></div>
+            </div>
+            <div class="life-layer" data-depth="0.05">
+              <p class="life__note life__note--2 life-reveal" style="--delay: 0.6s">Diwali Party</p>
+            </div>
+            <div class="life-layer" data-depth="0.05">
+              <div class="life__arrow life__arrow--2 life-reveal" style="--delay: 0.7s" aria-hidden="true"><span><img src="assets/life2-arrow.svg" alt="" /></span></div>
+            </div>
+          </div>
+          <div class="life__group life__group--repeat">
+            <div class="life-layer" data-depth="-0.02">
+              <p class="life__text life__text--2 life-reveal">Cashkaro is the largest Cashback &amp; Coupons site in India, backed my marquee investors like Mr. Ratan Tata, Kalaari Capital &amp; Korea Investment Partners. We are also redefining social commerce with</p>
+            </div>
+            <div class="life-layer" data-depth="0.05">
+              <div class="life-photo life-photo--plate life-reveal life-float" style="--delay: 0.15s; --float: 6s; --float-dir: reverse"><div class="life-photo__inner"><img class="life-photo__img" src="assets/life2-plate.png" alt="" /></div></div>
+            </div>
+            <div class="life-layer" data-depth="0.05">
+              <div class="life-photo life-photo--diyas-2 life-reveal life-float" style="--delay: 0.3s; --float: 7s"><div class="life-photo__inner"><img class="life-photo__img" src="assets/life2-diyas.png" alt="" /></div></div>
+            </div>
+            <div class="life-layer" data-depth="0.05">
+              <div class="life-photo life-photo--lotus life-reveal life-float" style="--delay: 0.45s; --float: 8s"><div class="life-photo__inner"><img class="life-photo__img" src="assets/life2-lotus.png" alt="" /></div></div>
+            </div>
+            <div class="life-layer" data-depth="0.05">
+              <p class="life__note life__note--2 life-reveal" style="--delay: 0.6s">Diwali Party</p>
+            </div>
+            <div class="life-layer" data-depth="0.05">
+              <div class="life__arrow life__arrow--2 life-reveal" style="--delay: 0.7s" aria-hidden="true"><span><img src="assets/life2-arrow.svg" alt="" /></span></div>
+            </div>
+          </div>
+        </div>
+        <!-- Hand-hatched title (169:4301 fill, 169:4303 hatching clipped to the letters, 169:4919 outline): sits
+             outside the strip so it stays put while the strip slides sideways -->
+        <div class="life-layer" data-depth="-0.25">
+          <h2 class="life__title life-reveal" aria-label="Life at Cashkaro">
+            <img class="life__title-fill" src="assets/life2-title-fill.svg" alt="" />
+            <span class="life__title-hatch" aria-hidden="true"><img src="assets/life2-title-hatch.svg" alt="" /></span>
+            <img class="life__title-outline" src="assets/life2-title-outline.svg" alt="" />
+          </h2>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer section: follows the page canvas once Life at CashKaro has finished -->
+  <section class="footer-section">
+    <!-- Site footer, copied from cashkaro.com (links point back to the main site) -->
+    <footer class="site-footer">
+      <div class="site-footer__cols">
+        <div class="site-footer__col">
+          <p class="site-footer__heading">About CashKaro</p>
+          <a href="https://cashkaro.com/about-us">About Us</a>
+          <a href="https://cashkaro.com/page/press">Press</a>
+          <a href="https://cashkaro.com/blog">Blog</a>
+          <a href="https://cashkaro.com/testimonials">Testimonials</a>
+        </div>
+        <div class="site-footer__col">
+          <p class="site-footer__heading">Useful Reads</p>
+          <a href="https://cashkaro.com/terms-conditions">Terms and Conditions</a>
+          <a href="https://cashkaro.com/privacy-policy">Privacy &amp; Cookie Policy</a>
+          <a href="https://cashkaro.com/anti-spam-policy">Anti-Spam Policy</a>
+        </div>
+        <div class="site-footer__col">
+          <p class="site-footer__heading">Special Pages</p>
+          <a href="https://cashkaro.com/refer-and-earn">Refer and Earn</a>
+          <a href="https://cashkaro.com/page/careers">Careers</a>
+          <a href="https://cashkaro.com/page/become-our-partner">Become our Partner</a>
+        </div>
+        <div class="site-footer__col">
+          <p class="site-footer__heading">Connect With Us</p>
+          <a href="https://cashkaro.com/help">Help</a>
+          <a href="https://cashkaro.com/contact-us?topic=other-questions">Contact Us</a>
+        </div>
+        <div class="site-footer__col">
+          <p class="site-footer__heading site-footer__heading--bold">Let’s Get Social</p>
+          <div class="site-footer__social">
+            <a rel="nofollow noopener" target="_blank" href="https://www.facebook.com/cashkaro?utm_source=footer&amp;utm_medium=facebook&amp;utm_campaign=footer-links"><img src="https://asset22.ckassets.com/wp/wp-content/themes/CashKaro_WP_V1/img/facebook.svg" alt="CashKaro Facebook" width="10" height="16" loading="lazy" /></a>
+            <a rel="nofollow noopener" target="_blank" href="https://twitter.com/cashkarocom?utm_source=footer&amp;utm_medium=twitter&amp;utm_campaign=footer-links"><img src="https://asset22.ckassets.com/wp/wp-content/themes/CashKaro_WP_V1/img/twitter_v1.png" alt="CashKaro Twitter" width="16" height="16" loading="lazy" /></a>
+            <a rel="nofollow noopener" target="_blank" href="https://www.instagram.com/cashkaro?utm_source=footer&amp;utm_medium=instagram&amp;utm_campaign=footer-links"><img src="https://asset22.ckassets.com/wp/wp-content/themes/CashKaro_WP_V1/img/instagram.svg" alt="CashKaro Instagram" width="16" height="16" loading="lazy" /></a>
+            <a rel="nofollow noopener" target="_blank" href="https://www.youtube.com/c/cashkaroindia?utm_source=footer&amp;utm_medium=youtube&amp;utm_campaign=footer-links"><img src="https://asset22.ckassets.com/wp/wp-content/themes/CashKaro_WP_V1/img/youtube.svg" alt="CashKaro YouTube" width="16" height="16" loading="lazy" /></a>
+            <a rel="nofollow noopener" target="_blank" href="https://www.linkedin.com/company/cashkaro-com?utm_source=footer&amp;utm_medium=linkedin&amp;utm_campaign=footer-links"><img src="https://asset22.ckassets.com/wp/wp-content/themes/CashKaro_WP_V1/img/linkedin_v1.png" alt="CashKaro LinkedIn" width="16" height="16" loading="lazy" /></a>
+          </div>
+          <p class="site-footer__heading site-footer__heading--bold site-footer__heading--app">Download App</p>
+          <div class="site-footer__apps">
+            <a rel="nofollow noopener" target="_blank" href="https://cashk.app.link/BFrRPLGtIKb"><img src="https://asset22.ckassets.com/wp/wp-content/themes/CashKaro_WP_V1/img/google_play_v1.png" alt="CashKaro Android App" width="140" height="42" loading="lazy" /></a>
+            <a rel="nofollow noopener" target="_blank" href="https://cashk.app.link/BFrRPLGtIKb"><img src="https://asset22.ckassets.com/wp/wp-content/themes/CashKaro_WP_V1/img/apple_store_v1.png" alt="CashKaro iOS App" width="140" height="42" loading="lazy" /></a>
+          </div>
+        </div>
+      </div>
+      <p class="site-footer__copy">© Copyright <span id="footer-year">2026</span> CashKaro. All Rights Reserved.</p>
+    </footer>
+  </section>
+  <script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+  </script>
+  <script>
+    // Fit the 1440px design edge-to-edge at any viewport width
+    function fitPage() {
+      var scale = document.documentElement.clientWidth / 1440;
+      document.documentElement.style.setProperty("--page-scale", scale);
+    }
+    fitPage();
+    window.addEventListener("resize", fitPage);
+  </script>
+  <script src="scribble.js"></script>
+  <script src="scroll.js"></script>
+  <script src="parallax.js"></script>
+  <script src="reveal.js"></script>
+  <script src="tear.js"></script>
+  <script src="paper.js"></script>
+  <script src="values.js"></script>
+  <script src="why.js"></script>
+  <script src="life.js"></script>
+</body>
+</html>

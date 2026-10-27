@@ -1,0 +1,2011 @@
+@font-face {
+  font-family: "Metropolis";
+  src: url("assets/fonts/Metropolis-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("assets/fonts/Metropolis-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("assets/fonts/Metropolis-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("assets/fonts/Metropolis-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("assets/fonts/Metropolis-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("assets/fonts/Metropolis-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ink: #201227;
+  --ink-input: #2b1935;
+  --navy: #0c0757;
+  --orange-top: #ff975c;
+  --orange-bottom: #f16607;
+  --card-border: rgba(255, 255, 255, 0.22);
+  --card-shadow:
+    0 0 0 2.215px var(--card-border),
+    0 67.564px 18.829px 0 rgba(0, 0, 0, 0),
+    0 43.197px 17.722px 0 rgba(0, 0, 0, 0.01),
+    0 24.367px 14.399px 0 rgba(0, 0, 0, 0.05),
+    0 11.076px 11.076px 0 rgba(0, 0, 0, 0.09),
+    0 2.215px 5.538px 0 rgba(0, 0, 0, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- CashKaro site header (Figma 249:31294 / 255:31352), shared by index and jobs ---------- */
+
+.ck-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 82px;
+  padding: 0 72px;
+  background: #fff;
+  font-family: "Figtree", sans-serif;
+}
+
+.ck-header__start {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-width: 0;
+}
+
+.ck-header__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 16.364px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.ck-header__menu img,
+.ck-header__logo img {
+  display: block;
+}
+
+.ck-header__logo img {
+  width: 101px;
+  height: 25.25px;
+}
+
+/* Grey search field, 584px at most, 56px in from the logo */
+.ck-header__search {
+  position: relative;
+  flex: 1;
+  max-width: 584px;
+  margin: 0 0 0 56px;
+}
+
+.ck-header__search-icon {
+  position: absolute;
+  left: 27px;
+  top: 50%;
+  width: 24px;
+  height: 29px;
+  /* The exported glyph is upside down (handle top-right); Figma shows it flipped */
+  transform: translateY(-50%) scaleY(-1);
+}
+
+.ck-header__search input {
+  width: 100%;
+  height: 50px;
+  padding: 0 12px 0 65px;
+  border: 0;
+  border-radius: 12px;
+  outline: none;
+  background: #f5f7f9;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  color: #262626;
+}
+
+.ck-header__search input::placeholder {
+  color: #5c5c5c;
+  opacity: 1;
+}
+
+.ck-header__end {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.ck-header__end a {
+  color: #000;
+  text-decoration: none;
+}
+
+.ck-header__help {
+  padding: 0 26px 0 24px;
+  border-right: 2px solid #e5e7eb;
+}
+
+.ck-header__login {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 24px;
+}
+
+/* Account icon: 20px glyph in a 24px box */
+.ck-header__login img {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+}
+
+/* ---------- Page canvas (Figma frame "final" 1440 × 2371) ---------- */
+
+.page {
+  position: relative;
+  width: 1440px;
+  /* No fixed height: the canvas ends where Life at CashKaro ends, and the footer section follows */
+  margin: 0;
+  /* clip (not hidden) so the pinned hero can stick to the viewport */
+  overflow: clip;
+  /* Scale the 1440px Figma frame to the viewport width (set in index.html) */
+  zoom: var(--page-scale, 1);
+  background: #fff;
+}
+
+/* Header sits above the hero, whose beams and glow bleed upward past the track */
+.page > .ck-header {
+  z-index: 1;
+}
+
+.hero-track {
+  position: relative;
+  /* Hero height + the scroll distance the background stays pinned for:
+     until the second card row (centre at 1273px) is half scrolled past the top */
+  height: 2273px;
+  isolation: isolate;
+  /* Scroll progress, written by scroll.js */
+  --move: 0;
+  /* Cursor offset, written by parallax.js once the mouse moves */
+  --px: 0;
+  --py: 0;
+  --swap: 0;
+}
+
+.hero__bg {
+  position: sticky;
+  top: 0;
+  height: 1000px;
+}
+
+/* Foreground content scrolls normally over the pinned background */
+.hero {
+  position: absolute;
+  /* Lifted 80px so the job cards peek into the first screen under the site header */
+  inset: -80px 0 80px;
+}
+
+/* ---------- Background stack ---------- */
+
+.hero__grid {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1440px;
+  height: 1000px;
+}
+
+.hero__fade {
+  position: absolute;
+  left: 0;
+  top: 229.69px;
+  width: 1440px;
+  height: 770.31px;
+  background: linear-gradient(to bottom, rgba(12, 7, 87, 0), var(--navy));
+}
+
+.hero__ellipse {
+  position: absolute;
+  left: -56.22px;
+  top: -638.6px;
+  width: 1552.44px;
+  height: 1552.44px;
+  max-width: none;
+  mix-blend-mode: plus-lighter;
+}
+
+.hero__top-glow {
+  position: absolute;
+  left: -1360px;
+  top: 0;
+  width: 2800px;
+  height: 543.394px;
+  max-width: none;
+  mix-blend-mode: plus-lighter;
+}
+
+.hero__vignette {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1440px;
+  height: 1000px;
+}
+
+.hero__beams {
+  position: absolute;
+  left: -804.56px;
+  top: -650.9px;
+  width: 3048.39px;
+  height: 1776.1px;
+  max-width: none;
+  overflow: visible;
+}
+
+/* ---------- Sun rays: shadows + light fan out from the center once, then drift right to left forever ---------- */
+
+.hero__rig {
+  position: absolute;
+  inset: 0;
+  /* Point where the beams converge, so a one-fan rotation lines up seamlessly */
+  transform-origin: 720px -1370px;
+  animation:
+    rays-expand 2.6s ease-out 0.4s both,
+    rays-drift 42s linear 3s infinite;
+}
+
+/* Copy of the 5-beam fan rotated one fan-width (77deg) to the right, hidden until the intro ends */
+.hero__beams--next {
+  transform-origin: 1524.56px -719.1px;
+  transform: rotate(-77deg);
+}
+
+.hero__beams--next,
+.hero__beams-next {
+  animation: rays-intro 0s 3s both;
+}
+
+.hero__rig-light {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: plus-lighter;
+  animation: rays-intro 2.6s ease-out 0.4s both;
+}
+
+.hero__dim {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  pointer-events: none;
+  animation: hero-dim 2.4s ease-out both;
+}
+
+@keyframes rays-expand {
+  from {
+    transform: rotate(0deg) scaleX(0.05);
+  }
+  to {
+    transform: rotate(0deg) scaleX(1);
+  }
+}
+
+@keyframes rays-drift {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(77deg);
+  }
+}
+
+@keyframes rays-intro {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__rig,
+  .hero__rig-light,
+  .hero__beams--next,
+  .hero__beams-next,
+  .hero__dim {
+    animation: none;
+  }
+
+  .hero__dim {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-dim {
+  from {
+    opacity: 0.75;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ---------- Headline ---------- */
+
+.headline {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  pointer-events: none;
+  /* Headline shrunk 15% around the centre of the two lines */
+  scale: 0.85;
+  transform-origin: 720px 295px;
+}
+
+.headline__glow,
+.headline__line {
+  position: absolute;
+  max-width: none;
+}
+
+.headline__line {
+  opacity: 0.85;
+}
+
+.headline__glow {
+  transition: opacity 0.6s ease-out;
+}
+
+.is-scribbling .headline__glow {
+  opacity: 0;
+}
+
+.is-scribbling img.headline__line,
+.is-boiling img.headline__line {
+  visibility: hidden;
+}
+
+.headline__glow--1 {
+  left: 415.78px;
+  top: 166.44px;
+  width: 608.436px;
+  height: 119.222px;
+}
+
+.headline__line--1 {
+  left: 428.867px;
+  top: 179.523px;
+  width: 582.265px;
+  height: 93.051px;
+}
+
+.headline__glow--2 {
+  left: 211.01px;
+  top: 279.23px;
+  width: 1017.975px;
+  height: 144.575px;
+}
+
+.headline__line--2 {
+  left: 224.37px;
+  top: 292.574px;
+  width: 991.26px;
+  height: 117.877px;
+}
+
+/* ---------- Search bar ---------- */
+
+.search {
+  position: absolute;
+  /* Centered on the same point as the previous two-field bar */
+  left: 360px;
+  top: 449.393px;
+  width: 720px;
+  height: 76px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 12px 12px 12px 44px;
+  margin: 0;
+  overflow: clip;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  border-radius: 88px;
+  box-shadow:
+    0 717px 201px 0 rgba(0, 0, 0, 0),
+    0 459px 183px 0 rgba(0, 0, 0, 0.01),
+    0 258px 155px 0 rgba(0, 0, 0, 0.03),
+    0 115px 115px 0 rgba(0, 0, 0, 0.05),
+    0 29px 63px 0 rgba(0, 0, 0, 0.06);
+}
+
+.search__field {
+  display: flex;
+  align-items: center;
+  width: 499px;
+  flex-shrink: 0;
+}
+
+.search__input {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-family: "Metropolis", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: -0.72px;
+  color: var(--ink-input);
+}
+
+.search__input::placeholder {
+  color: var(--ink-input);
+  opacity: 0.3;
+}
+
+.search__button {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 20px 44px;
+  overflow: clip;
+  border: 0;
+  border-radius: 44px;
+  background: linear-gradient(to bottom, var(--orange-top), var(--orange-bottom));
+  box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.search__button:hover {
+  filter: brightness(1.05);
+}
+
+/* ---------- "Current JOB Openings" ---------- */
+
+.openings-label {
+  position: absolute;
+  left: 599.5px;
+  top: 631px;
+  font-family: "Metropolis", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 0.54px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fff;
+  opacity: 0.3;
+}
+
+/* ---------- Floating photos ---------- */
+
+.photo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo--right {
+  left: 1142.1px;
+  top: 79.94px;
+  width: 229.793px;
+  height: 243.331px;
+}
+
+.photo--left {
+  left: 40px;
+  top: 229.56px;
+  width: 198.482px;
+  height: 220.444px;
+}
+
+.photo__card {
+  position: relative;
+  flex: none;
+  width: 164px;
+  height: 192px;
+  overflow: clip;
+  background: #fff;
+  border-radius: 26.582px;
+  box-shadow: var(--card-shadow);
+}
+
+.photo--right .photo__card {
+  rotate: 25.01deg;
+}
+
+.photo--left .photo__card {
+  rotate: 168.69deg;
+  scale: 1 -1;
+}
+
+.photo__img-wrap {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+}
+
+.photo--right .photo__img-wrap {
+  left: calc(50% + 0.76px);
+  top: -5.1px;
+  width: 170.759px;
+  height: 301.408px;
+}
+
+.photo--left .photo__img-wrap {
+  left: calc(50% + 0.71px);
+  top: -2.4px;
+  width: 181.184px;
+  height: 315.677px;
+}
+
+.photo__img {
+  flex: none;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.photo--right .photo__img {
+  width: 169.112px;
+  height: 300.484px;
+  rotate: -0.31deg;
+}
+
+.photo--left .photo__img {
+  width: 174.105px;
+  height: 311.78px;
+  rotate: 178.69deg;
+  scale: 1 -1;
+}
+
+.photo-clip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-clip--right {
+  left: 1291.48px;
+  top: 89.68px;
+  width: 26.552px;
+  height: 38.791px;
+}
+
+.photo-clip--left {
+  left: 105.24px;
+  top: 219.14px;
+  width: 19.001px;
+  height: 38.855px;
+}
+
+.photo-clip__inner {
+  position: relative;
+  flex: none;
+  width: 11.93px;
+  height: 37.238px;
+}
+
+.photo-clip--right .photo-clip__inner {
+  rotate: 25deg;
+}
+
+.photo-clip--left .photo-clip__inner {
+  rotate: 168.69deg;
+  scale: 1 -1;
+}
+
+.photo-clip__inner img {
+  position: absolute;
+  inset: -2.69% -16.77% -8.06% -16.76%;
+  width: calc(100% + 16.77% + 16.76%);
+  height: calc(100% + 2.69% + 8.06%);
+  max-width: none;
+}
+
+/* ---------- Job cards ---------- */
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 346.8px;
+  height: 246.73px;
+  padding: 25.5px 29.75px;
+  overflow: clip;
+  background: #fff;
+  border-radius: 17px;
+  box-shadow: var(--card-shadow);
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.job-card--front {
+  position: absolute;
+  left: 546.6px;
+  top: 736.606px;
+}
+
+.job-card-slot {
+  position: absolute;
+  top: 728.281px;
+  width: 396.185px;
+  height: 323.306px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.job-card-slot--back-right {
+  left: 605.633px;
+}
+
+.job-card-slot--back-left {
+  left: 412.716px;
+}
+
+.job-card--back {
+  flex: none;
+}
+
+.job-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 53.38px;
+  width: 100%;
+}
+
+.job-card__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 127.5px;
+  font-family: "Metropolis", sans-serif;
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+.job-card__category {
+  width: 100%;
+  font-size: 11.9px;
+  letter-spacing: 0.476px;
+  color: #000000;
+  opacity: 0.6;
+}
+
+.job-card__title {
+  width: 100%;
+  font-size: 29.557px;
+  letter-spacing: -1.3183px;
+  color: #000000;
+}
+
+.job-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.job-card__meta span {
+  font-family: "Metropolis", sans-serif;
+  font-weight: 700;
+  font-size: 11.9px;
+  line-height: 1.22;
+  letter-spacing: 0.476px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #000000;
+  opacity: 0.6;
+}
+
+.job-card__meta img {
+  width: 1px;
+  height: 14.871px;
+  margin: 0 -0.5px;
+}
+
+/* ---------- Intro reveal: search, then right photo, then left photo ---------- */
+
+.search {
+  animation: soft-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.8s both;
+}
+
+.photo--right,
+.photo-clip--right {
+  animation:
+    soft-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) 2.5s both,
+    photo-float 6.5s ease-in-out 2.5s infinite;
+}
+
+.photo--left,
+.photo-clip--left {
+  animation:
+    soft-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) 3.1s both,
+    photo-float 7.5s ease-in-out 3.1s infinite reverse;
+}
+
+.openings-label {
+  animation: soft-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) 3.4s both;
+}
+
+/* Job cards are dealt: the centre card slides in from below, then the side cards slide out from under it (right, then left) */
+.job-card--front {
+  animation: deal-in 0.9s cubic-bezier(0.22, 1.2, 0.36, 1) 3.8s both;
+}
+
+.job-card-slot--back-right {
+  animation: fan-out-right 0.8s cubic-bezier(0.34, 1.3, 0.64, 1) 4.55s both;
+}
+
+.job-card-slot--back-left {
+  animation: fan-out-left 0.8s cubic-bezier(0.34, 1.3, 0.64, 1) 4.75s both;
+}
+
+@keyframes deal-in {
+  from {
+    opacity: 0;
+    transform: translate(-40px, 560px) rotate(-12deg);
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+/* Each slot starts centred on the front card, so the card hides beneath it */
+@keyframes fan-out-right {
+  from {
+    opacity: 0;
+    transform: translateX(-367.2px);
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes fan-out-left {
+  from {
+    opacity: 0;
+    transform: translateX(367.241px);
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+/* ---------- Floating + draggable photos ---------- */
+
+/* Pins float around their card's centre so they stay attached */
+.photo-clip--right {
+  transform-origin: -34.47px 111.92px;
+}
+
+.photo-clip--left {
+  transform-origin: 34px 120.64px;
+}
+
+.photo,
+.photo-clip {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: scale 0.25s ease-out;
+}
+
+.photo img,
+.photo-clip img {
+  -webkit-user-drag: none;
+}
+
+.photo.is-dragging,
+.photo-clip.is-dragging {
+  z-index: 10;
+  cursor: grabbing;
+  scale: 1.04;
+}
+
+@keyframes photo-float {
+  0%,
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+  25% {
+    translate: 2px -7px;
+    rotate: 1.4deg;
+  }
+  50% {
+    translate: -1px -11px;
+    rotate: -0.6deg;
+  }
+  75% {
+    translate: -3px -5px;
+    rotate: -1.6deg;
+  }
+}
+
+@keyframes soft-appear {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+    filter: blur(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search,
+  .photo,
+  .photo-clip,
+  .openings-label,
+  .job-card--front,
+  .job-card-slot {
+    animation: none;
+  }
+}
+
+/* ---------- Job card row: the three cards sit in a line ---------- */
+
+/* Label scrolls with the page above the cards */
+.openings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.job-card-slot--back-left {
+  translate: -258.016px -29.964px;
+}
+
+.job-card-slot--back-right {
+  translate: 283.475px -29.964px;
+}
+
+/* ---------- Second card row: appears when scrolled into view ---------- */
+
+.job-row {
+  position: absolute;
+  left: 179.4px;
+  top: 1003.736px;
+  display: flex;
+  gap: 20.4px;
+}
+
+.job-row:not(.is-visible) .job-card {
+  opacity: 0;
+}
+
+/* Centre, then right, then left — same order as the stack above */
+.job-row.is-visible .job-card--row-centre {
+  animation: soft-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0s both;
+}
+
+.job-row.is-visible .job-card--row-right {
+  animation: soft-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.job-row.is-visible .job-card--row-left {
+  animation: soft-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job-row .job-card {
+    animation: none !important;
+  }
+}
+
+/* ---------- "View all Jobs" button: 60px below the second card row ---------- */
+
+.view-jobs {
+  position: absolute;
+  left: 720px;
+  /* job-row top + card height + 60px */
+  top: 1310.466px;
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 80px;
+  overflow: clip;
+  background: linear-gradient(to bottom, #ff975c, #f16607);
+  border-radius: 44px;
+  box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.2);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ---------- Mouse parallax: hero layers drift by depth, background away from the cursor, foreground towards it ---------- */
+
+.hero__photos {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__photos .photo,
+.hero__photos .photo-clip {
+  pointer-events: auto;
+}
+
+/* translate composes with the transform/rotate/scale the layers already animate */
+.hero__grid,
+.hero__fade {
+  scale: 1.05;
+  translate: calc(var(--px) * -24px) calc(var(--py) * -16px);
+}
+
+.hero__ellipse,
+.hero__top-glow,
+.hero__rig--shadows,
+.hero__rig-light {
+  translate: calc(var(--px) * -10px) calc(var(--py) * -7px);
+}
+
+.headline__glow,
+.headline__line {
+  translate: calc(var(--px) * 20px) calc(var(--py) * 13px);
+}
+
+.search {
+  translate: calc(var(--px) * 32px) calc(var(--py) * 21px);
+}
+
+.hero__photos {
+  translate: calc(var(--px) * 54px) calc(var(--py) * 36px);
+}
+
+/* ---------- Torn paper: rises over the pinned background after the card grid ---------- */
+
+.paper {
+  position: relative;
+  z-index: 1;
+  /* Tear edge sits 1640px down the hero track, ~120px below the "View all Jobs" button */
+  margin-top: -633px;
+  /* Ends with Why CashKaro (core values) */
+  height: 4046.8px;
+  /* Parallax: the tear climbs up to 400px faster than the scroll as it crosses the viewport (--rise from paper.js) */
+  --rise: 0;
+  translate: 0 calc(var(--rise) * -400px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paper {
+    translate: none;
+  }
+}
+
+.paper__tear {
+  position: absolute;
+  /* 120px of room above the tear for its glow and shadow */
+  top: -120px;
+  left: 0;
+  width: 1440px;
+  height: 280px;
+  /* Paths run past the bottom so the roughened edges only show along the tear */
+  overflow: hidden;
+}
+
+/* The sheet below the torn top edge (which runs ~50–110px down) */
+.paper__sheet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 4046.8px;
+  /* Cut to the torn top edge (#sheet-clip, burned forward by paper.js) */
+  clip-path: url(#sheet-clip);
+}
+
+/* ---------- Life at CashKaro: pinned under the paper's bottom tear, then slides sideways (life.js) ---------- */
+
+.life {
+  position: relative;
+  /* Follows About CashKaro directly: pulled up by the 400px the paper has risen (its translate) */
+  margin-top: -400px;
+  /* Pinned while the strip slides through (1884px) and holds a moment at the end */
+  height: 3499px;
+}
+
+.life__view {
+  position: sticky;
+  top: 0;
+  height: 900px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Figma "Frame 2147229488" (169:82): slides left by its overflow (3324 - 1440) as --slide goes 0 → 1 */
+.life__strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3324px;
+  height: 800px;
+  translate: calc(var(--slide, 0) * -1884px) 0;
+}
+
+/* Parallax wrapper: sits at the strip's origin so its piece keeps its Figma position, and is shifted by its
+   depth as the strip slides (--px) and as the section is revealed (--py), both from life.js */
+.life-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  translate: calc(var(--px, 0) * 1px) calc(var(--py, 0) * 1px);
+  will-change: translate;
+}
+
+/* Hand-hatched title: white letters, pencil hatching clipped to them, then a faint outline on top */
+.life__title {
+  position: absolute;
+  left: 458.4px;
+  top: 85.68px;
+  width: 591.362px;
+  height: 62.42px;
+  margin: 0;
+}
+
+.life__title img {
+  position: absolute;
+  max-width: none;
+}
+
+.life__title-fill {
+  left: 0;
+  top: 0;
+}
+
+.life__title-hatch {
+  position: absolute;
+  left: -7.672px;
+  top: -27.268px;
+  width: 609.624px;
+  height: 121.374px;
+  -webkit-mask: url("assets/life2-title-hatch-mask.svg") 7.672px 27.268px / 591.362px 62.42px no-repeat;
+  mask: url("assets/life2-title-hatch-mask.svg") 7.672px 27.268px / 591.362px 62.42px no-repeat alpha;
+}
+
+.life__title-hatch img {
+  left: -0.29px;
+  top: -0.388px;
+}
+
+.life__title-outline {
+  left: -0.294px;
+  top: -0.293px;
+}
+
+/* Second group and its repeat: same pieces and positions, shifted one group-width along */
+.life__group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 800px;
+}
+
+.life__group--repeat {
+  left: 1202.93px;
+}
+
+.life__text {
+  position: absolute;
+  margin: 0;
+  font-family: "Metropolis", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 2.4;
+  letter-spacing: -0.8px;
+  color: #000;
+}
+
+/* Each word starts at 50% and inks in to black as the strip slides (--ink from life.js) */
+.life__word {
+  color: rgb(0 0 0 / var(--ink, 0.5));
+}
+
+.life__text--1 {
+  left: 193.16px;
+  top: 259.12px;
+  width: 235.49px;
+}
+
+.life__text--2 {
+  left: 970.71px;
+  top: 259.12px;
+  width: 305.12px;
+}
+
+/* Handwritten captions with curved arrows pointing at the photos */
+.life__note {
+  position: absolute;
+  margin: 0;
+  font-family: "Handlee", cursive;
+  font-size: 22px;
+  white-space: nowrap;
+  color: #fd7020;
+}
+
+.life__note--1 {
+  left: 320.59px;
+  top: 607.15px;
+}
+
+.life__note--2 {
+  left: 1442.48px;
+  top: 609.65px;
+}
+
+.life__arrow {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The arrow is drawn upright; each one is flipped and turned into place */
+.life__arrow span {
+  position: relative;
+  flex: none;
+  width: 47.058px;
+  height: 144.071px;
+  scale: 1 -1;
+}
+
+.life__arrow img {
+  position: absolute;
+  left: -0.998px;
+  top: 0;
+  max-width: none;
+}
+
+.life__arrow--1 {
+  left: 398.03px;
+  top: 636.15px;
+  width: 148.735px;
+  height: 64.28px;
+}
+
+.life__arrow--1 span {
+  rotate: -82.99deg;
+}
+
+.life__arrow--2 {
+  left: 1528.14px;
+  top: 618.68px;
+  width: 147.884px;
+  height: 60.507px;
+}
+
+.life__arrow--2 span {
+  rotate: -95.44deg;
+}
+
+/* Photo cards: white 4px frame around the photo */
+.life-photo {
+  position: absolute;
+  padding: 4px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow:
+    0 108px 43px 0 rgba(0, 0, 0, 0.01),
+    0 61px 36px 0 rgba(0, 0, 0, 0.05),
+    0 27px 27px 0 rgba(0, 0, 0, 0.09),
+    0 7px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.life-photo__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: clip;
+  background: #4b2b12;
+  border-radius: 14px;
+}
+
+.life-photo__img {
+  position: absolute;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* The first group's cards are drawn smaller: thinner frame, rounder-down corners, lighter shadow */
+.life-photo--diyas,
+.life-photo--snacks {
+  padding: 3.334px;
+  border-radius: 13.334px;
+  box-shadow:
+    0 90.005px 35.835px 0 rgba(0, 0, 0, 0.01),
+    0 50.836px 30.002px 0 rgba(0, 0, 0, 0.05),
+    0 22.501px 22.501px 0 rgba(0, 0, 0, 0.09),
+    0 5.834px 12.501px 0 rgba(0, 0, 0, 0.1);
+}
+
+.life-photo--diyas .life-photo__inner,
+.life-photo--snacks .life-photo__inner {
+  border-radius: 11.667px;
+}
+
+.life-photo--diyas {
+  left: 466.24px;
+  top: 333.1px;
+  width: 220.012px;
+  height: 313.35px;
+}
+
+.life-photo--diyas .life-photo__img {
+  left: -25.86px;
+  top: -35.85px;
+  width: 253.595px;
+  height: 380.392px;
+}
+
+/* Tilted card sits centred in a slot the size of its rotated bounds */
+.life-photo-slot {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.life-photo-slot .life-photo {
+  position: relative;
+  flex: none;
+}
+
+.life-photo-slot--snacks {
+  left: 549.47px;
+  top: 210.72px;
+  width: 272.586px;
+  height: 211.277px;
+}
+
+.life-photo--snacks {
+  width: 253.214px;
+  height: 183.441px;
+  rotate: -6.59deg;
+}
+
+.life-photo--snacks .life-photo__img {
+  left: -71.14px;
+  top: -187.85px;
+  width: 377.476px;
+  height: 566.214px;
+}
+
+/* Overlaps the diyas card by the same 50.27px the lotus card overlaps it, so the three sit evenly */
+.life-photo--plate {
+  left: 1441.95px;
+  top: 247.12px;
+  width: 220px;
+  height: 313px;
+}
+
+.life-photo--plate .life-photo__img {
+  left: -34.416px;
+  top: -53.284px;
+  width: 280.832px;
+  height: 421.248px;
+}
+
+.life-photo--diyas-2 {
+  left: 1611.68px;
+  top: 282.13px;
+  width: 240.379px;
+  height: 326.971px;
+}
+
+.life-photo--diyas-2 .life-photo__img {
+  left: -31.03px;
+  top: -49.31px;
+  width: 280.669px;
+  height: 421.003px;
+}
+
+.life-photo--lotus {
+  left: 1801.79px;
+  top: 265.85px;
+  width: 251.684px;
+  height: 334.393px;
+}
+
+/* The photo is turned inside the upright card */
+.life-photo--lotus .life-photo__img {
+  left: -247.7px;
+  top: -371.98px;
+  width: 725.31px;
+  height: 1087.96px;
+  rotate: 6.03deg;
+}
+
+/* Soft appear as each piece is uncovered (life.js adds .is-shown), staggered by --delay within its group;
+   the photo cards then keep floating gently, each at its own pace (--float) */
+.life-reveal {
+  opacity: 0;
+}
+
+.life-reveal.is-shown {
+  opacity: 1;
+  animation: soft-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) both;
+}
+
+.life-float.is-shown {
+  animation:
+    soft-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) both,
+    photo-float var(--float, 7s) ease-in-out var(--delay, 0s) infinite;
+  /* Some cards float the opposite way round so they don't bob in step (--float-dir) */
+  animation-direction: normal, var(--float-dir, normal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .life-reveal,
+  .life-reveal.is-shown,
+  .life-float.is-shown {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* ---------- Why CashKaro, core values (Figma 230:29833): sky, heading and a sideways row of value cards (values.js) ---------- */
+
+/* Follows About CashKaro: the Figma frame's top sits 60px into .values, meeting About's bottom edge (1401.09px down
+   the sheet). Pinned for the frame's height plus 1598.6px of scroll: a 150px hold, the 1298.6px slide that brings
+   the last card in line with the 129px right margin, and another 150px hold. */
+.values {
+  position: absolute;
+  top: 1341.09px;
+  left: 0;
+  width: 1440px;
+  height: 2705.71px;
+}
+
+/* Sticky positions ignore the paper's rise translate, so the top offset cancels it out (--rise from paper.js);
+   the extra 60px pins the Figma frame's top (not the sheet's) to the top of the viewport */
+.values__pin {
+  position: sticky;
+  top: calc(var(--rise) * 400px - 60px);
+  height: 1107.11px;
+  overflow: hidden;
+  background: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .values__pin {
+    top: -60px;
+  }
+}
+
+.values__frame {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 1440px;
+  height: 1047.11px;
+}
+
+.values__sky {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1440px;
+  height: 1047.112px;
+}
+
+.values__sky img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+/* White vignette round the edges (Figma's radial overlay), then a white fade down from the top */
+.values__sky::before,
+.values__sky::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.values__sky::before {
+  height: 100%;
+  background: radial-gradient(1420.1px 1032.7px at 720px 14.436px, rgba(255, 255, 255, 0), #fff);
+}
+
+.values__sky::after {
+  height: 735.217px;
+  background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
+}
+
+/* Figma 230:29833: heading then the five cards, 83px apart, slid left together by up to 1298.6px
+   (bringing the last card in line with the 129px right margin) as --slide goes 0 → 1 */
+.values__row {
+  --slide: 0;
+  position: absolute;
+  left: 129px;
+  top: 158.7px;
+  display: flex;
+  align-items: center;
+  gap: 83px;
+  translate: calc(var(--slide) * -1298.6px) 0;
+  will-change: translate;
+}
+
+/* Figma 225:29565 */
+.values__heading {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: "Metropolis", sans-serif;
+  font-weight: 800;
+  color: #0b1248;
+  white-space: nowrap;
+}
+
+.values__eyebrow {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.values__title {
+  margin: 0;
+  font-size: 66px;
+  font-weight: 800;
+  line-height: 1.66;
+  letter-spacing: -2.64px;
+}
+
+/* Figma 229:29783: five 362.922px cards, 32px apart */
+.values__track {
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Ticket-shaped card: notched white shape with its shadow baked in (Figma "Exclude") */
+.value-card {
+  position: relative;
+  flex: none;
+  width: 362.922px;
+  height: 535.742px;
+}
+
+.value-card__ticket {
+  position: absolute;
+  left: -94px;
+  top: -16.98px;
+  width: 550.922px;
+  height: 882.742px;
+  max-width: none;
+  pointer-events: none;
+}
+
+.value-card__photo {
+  position: absolute;
+  left: 29.92px;
+  top: 29.89px;
+  width: 303px;
+  height: 282px;
+  overflow: clip;
+  border-radius: 24px;
+  background: #f9dfcd;
+  box-shadow:
+    0 133px 53px 0 rgba(0, 0, 0, 0.01),
+    0 75px 45px 0 rgba(0, 0, 0, 0.05),
+    0 33px 33px 0 rgba(0, 0, 0, 0.09),
+    0 8px 18px 0 rgba(0, 0, 0, 0.1);
+}
+
+.value-card__photo img {
+  position: absolute;
+  left: -145.69px;
+  top: -85.87px;
+  width: 595.208px;
+  height: 595.208px;
+  max-width: none;
+  object-fit: cover;
+}
+
+.value-card__body {
+  position: absolute;
+  left: 52.81px;
+  top: 371.24px;
+  width: 257.3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Metropolis", sans-serif;
+  text-align: center;
+}
+
+.value-card__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #1b1c1c;
+}
+
+.value-card__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 255.431px;
+  height: 104px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #574336;
+}
+
+/* Entrance (values.js adds .is-shown once its top is 40% up the screen): the heading softly appears,
+   then the cards rise in one after another */
+.values__heading,
+.value-card {
+  opacity: 0;
+}
+
+.values.is-shown .values__heading {
+  opacity: 1;
+  animation: soft-appear 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.values.is-shown .value-card {
+  opacity: 1;
+  animation: rise-in 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.values.is-shown .value-card:nth-child(1) { animation-delay: 0.25s; }
+.values.is-shown .value-card:nth-child(2) { animation-delay: 0.37s; }
+.values.is-shown .value-card:nth-child(3) { animation-delay: 0.49s; }
+.values.is-shown .value-card:nth-child(4) { animation-delay: 0.61s; }
+.values.is-shown .value-card:nth-child(5) { animation-delay: 0.73s; }
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(220px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .values__heading,
+  .value-card {
+    opacity: 1;
+    animation: none !important;
+  }
+}
+
+/* ---------- Why CashKaro (Figma 201:23021): first on the sheet; About CashKaro follows ---------- */
+
+/* Starts at the top of the sheet, its white fade under the torn edge. Drawn above About so About's
+   60px of white above its frame tucks under Why's rounded bottom. */
+.why {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1401.09px;
+  background: #fff;
+}
+
+/* Figma "image 6345090": the CashKaro store at sunset, rounded along the bottom */
+.why__photo {
+  position: absolute;
+  left: 0;
+  top: 32.78px;
+  width: 1440px;
+  height: 1368.31px;
+  overflow: hidden;
+  border-radius: 0 0 44px 44px;
+}
+
+.why__photo img {
+  position: absolute;
+  left: 0;
+  top: -8.43%;
+  width: 157.04%;
+  height: 115.07%;
+  max-width: none;
+  /* Zoom about the middle of the visible part of the photo */
+  transform-origin: 720px 799px;
+}
+
+/* why.js: zoomed in until the section scrolls into view, then eases slowly back out */
+.why--zoom .why__photo img {
+  scale: 1.25;
+  transition: scale 4.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why--zoom.is-visible .why__photo img {
+  scale: 1;
+}
+
+/* ...while the two cards rise into place from below, the frosted one just behind the white one */
+.why--zoom .why__card,
+.why--zoom .why__card-back {
+  opacity: 0;
+  translate: 0 160px;
+  transition:
+    opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    translate 2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why--zoom .why__card {
+  transition-delay: 0.35s;
+}
+
+.why--zoom .why__card-back {
+  transition-delay: 0.5s;
+}
+
+.why--zoom.is-visible .why__card,
+.why--zoom.is-visible .why__card-back {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Burning torn edge over the bottom of the photo (tear.js), under the cards; its white meets About below */
+.why__tear {
+  position: absolute;
+  left: 0;
+  top: 961.09px;
+  width: 1440px;
+  height: 440px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.why__tear-body {
+  fill: #fff;
+}
+
+.why__fade {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1440px;
+  height: 647.14px;
+  background: linear-gradient(to bottom, #fff 31.301%, rgba(255, 255, 255, 0));
+}
+
+/* Figma turns this card 9.19° anticlockwise about its top-left corner */
+.why__card-back {
+  position: absolute;
+  left: 65.34px;
+  top: 511.18px;
+  width: 604px;
+  height: 633px;
+  border-radius: 44px;
+  background: rgba(255, 255, 255, 0.44);
+  -webkit-backdrop-filter: blur(11px);
+  backdrop-filter: blur(11px);
+  transform-origin: 0 0;
+  rotate: -9.188deg;
+}
+
+.why__card {
+  position: absolute;
+  left: 112px;
+  top: 472.73px;
+  width: 604px;
+  height: 633px;
+  overflow: clip;
+  border-radius: 44px;
+  background: #fff;
+  box-shadow:
+    0 319px 128px 0 rgba(0, 0, 0, 0.01),
+    0 179px 108px 0 rgba(0, 0, 0, 0.05),
+    0 80px 80px 0 rgba(0, 0, 0, 0.09),
+    0 20px 44px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Hand-hatched title: faint letters, pencil hatching clipped to them, then a faint outline on top */
+.why__title {
+  position: absolute;
+  left: 76.03px;
+  top: 112.35px;
+  width: 451.938px;
+  height: 61.74px;
+  margin: 0;
+}
+
+.why__title img {
+  position: absolute;
+  max-width: none;
+}
+
+/* "About Cashkaro" art scaled to the title's width, centred on its height */
+.why__title-art {
+  left: 0;
+  top: 8.505px;
+  width: 451.938px;
+  height: 44.73px;
+}
+
+.why__title-fill {
+  left: 0;
+  top: 0;
+}
+
+.why__title-hatch {
+  position: absolute;
+  left: -6.512px;
+  top: -28.524px;
+  width: 467.183px;
+  height: 116.67px;
+  -webkit-mask: url("assets/why2-title-hatch-mask.svg") 6.512px 28.524px / 451.938px 61.74px no-repeat;
+  mask: url("assets/why2-title-hatch-mask.svg") 6.512px 28.524px / 451.938px 61.74px no-repeat alpha;
+}
+
+.why__title-hatch img {
+  left: -0.324px;
+  top: -0.257px;
+}
+
+.why__title-outline {
+  left: -0.294px;
+  top: -0.29px;
+}
+
+.why__text {
+  position: absolute;
+  left: 61px;
+  top: 222.51px;
+  width: 481.99px;
+  font-family: "Metropolis", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 43.2px;
+  letter-spacing: -0.8px;
+  color: #000000;
+}
+
+.why__initial,
+.why__brand {
+  font-weight: 600;
+}
+
+.why__initial {
+  font-size: 44px;
+}
+
+/* ---------- Chalk boil on the section titles (boil.js): the hatching is redrawn like stop-motion chalk ---------- */
+
+[data-boil] img {
+  transform-origin: 50% 50%;
+}
+
+[data-boil] img.is-boil-hidden {
+  visibility: hidden;
+}
+
+/* ---------- Site footer (matches cashkaro.com) — lives outside the scaled .page canvas so it stays responsive ---------- */
+
+.site-footer {
+  padding: 24px 16px;
+  background: #5c5c5c;
+  color: #fff;
+  font-family: "Metropolis", sans-serif;
+}
+
+.site-footer__cols {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 24px 40px;
+  margin-bottom: 64px;
+}
+
+.site-footer__heading {
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.site-footer__heading--bold {
+  font-weight: 600;
+}
+
+.site-footer__heading--app {
+  margin-top: 24px;
+}
+
+.site-footer__col > a {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer__col > a:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer__col > a:hover {
+  color: #0fe2ff;
+  text-decoration: underline;
+}
+
+.site-footer__social,
+.site-footer__apps {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-footer__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.site-footer__apps img {
+  width: 125px;
+  height: auto;
+}
+
+.site-footer__copy {
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    padding: 24px 40px;
+  }
+
+  .site-footer__cols {
+    gap: 40px 80px;
+    margin-bottom: 132px;
+  }
+
+  .site-footer__heading {
+    font-size: 16px;
+  }
+
+  .site-footer__apps img {
+    width: 140px;
+  }
+
+  .site-footer__copy {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer {
+    padding: 24px 80px;
+  }
+
+  .site-footer__cols {
+    justify-content: space-between;
+    gap: 40px 64px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-footer {
+    padding: 32px 160px;
+  }
+
+  .site-footer__cols {
+    gap: 40px;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Openings · Careers at CashKaro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600&family=Quicksand:wght@700&family=Schibsted+Grotesk:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="jobs.css" />
+</head>
+<body class="jobs-page">
+  <!-- Sky backdrop (Figma 249:30223 + 249:30224): blue fade with the grid soft-lit over it -->
+  <div class="jobs-sky" aria-hidden="true">
+    <div class="jobs-sky__grid"></div>
+  </div>
+
+  <!-- CashKaro site header (Figma 249:31294) -->
+  <header class="ck-header">
+    <div class="ck-header__start">
+      <button class="ck-header__menu" type="button" aria-label="Menu"><img src="assets/ck-menu.svg" alt="" /></button>
+      <a class="ck-header__logo" href="https://cashkaro.com"><img src="assets/ck-logo.svg" alt="CashKaro" /></a>
+      <form class="ck-header__search" role="search">
+        <label class="visually-hidden" for="ck-query">Search CashKaro</label>
+        <img class="ck-header__search-icon" src="assets/ck-search.svg" alt="" />
+        <input id="ck-query" type="search" placeholder="Search for any brand or product" autocomplete="off" />
+      </form>
+    </div>
+    <nav class="ck-header__end">
+      <a class="ck-header__help" href="#">Help</a>
+      <a class="ck-header__login" href="#"><img src="assets/ck-account.svg" alt="" />Login / Sign up</a>
+    </nav>
+  </header>
+
+  <main class="jobs">
+    <!-- Back pill (Figma 249:30239) -->
+    <a class="jobs-back" href="index.html">
+      <span class="jobs-back__icon" aria-hidden="true">&larr;</span>
+      Back
+    </a>
+
+    <h1 class="jobs__title">Current Openings</h1>
+
+    <form class="jobs-search" role="search">
+      <label class="visually-hidden" for="jobs-query">Search roles</label>
+      <input class="jobs-search__input" id="jobs-query" type="search" placeholder="Search by designation" autocomplete="off" />
+      <button class="jobs-search__button" type="submit">Search</button>
+    </form>
+
+    <div class="jobs-filters" role="group" aria-label="Filter by team"></div>
+
+    <p class="jobs__count" aria-live="polite"></p>
+    <div class="jobs-grid"></div>
+    <p class="jobs__empty" hidden>No roles match that search. Try another designation or location.</p>
+  </main>
+
+  <script>
+    // Same fit as the home page: the 1440px design scaled to the viewport width (jobs.css applies it on desktop)
+    function fitPage() {
+      var scale = document.documentElement.clientWidth / 1440;
+      document.documentElement.style.setProperty("--page-scale", scale);
+    }
+    fitPage();
+    window.addEventListener("resize", fitPage);
+  </script>
+  <script src="jobs.js"></script>
+</body>
+</html>
