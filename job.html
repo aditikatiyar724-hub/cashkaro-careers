@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Careers at CashKaro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600&family=Quicksand:wght@700&family=Schibsted+Grotesk:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="jobs.css" />
+  <link rel="stylesheet" href="job.css" />
+</head>
+<body class="jobs-page job-page">
+  <!-- Sky backdrop (Figma 263:31516 + 263:31517), shared with the listing -->
+  <div class="jobs-sky" aria-hidden="true">
+    <div class="jobs-sky__grid"></div>
+  </div>
+
+  <!-- CashKaro site header (Figma 249:31294) -->
+  <header class="ck-header">
+    <div class="ck-header__start">
+      <button class="ck-header__menu" type="button" aria-label="Menu"><img src="assets/ck-menu.svg" alt="" /></button>
+      <a class="ck-header__logo" href="https://cashkaro.com"><img src="assets/ck-logo.svg" alt="CashKaro" /></a>
+      <form class="ck-header__search" role="search">
+        <label class="visually-hidden" for="ck-query">Search CashKaro</label>
+        <img class="ck-header__search-icon" src="assets/ck-search.svg" alt="" />
+        <input id="ck-query" type="search" placeholder="Search for any brand or product" autocomplete="off" />
+      </form>
+    </div>
+    <nav class="ck-header__end">
+      <a class="ck-header__help" href="#">Help</a>
+      <a class="ck-header__login" href="#"><img src="assets/ck-account.svg" alt="" />Login / Sign up</a>
+    </nav>
+  </header>
+
+  <main class="job">
+    <!-- Back pill (Figma 263:31532) -->
+    <a class="jobs-back" href="jobs.html">
+      <span class="jobs-back__icon" aria-hidden="true">&larr;</span>
+      Back
+    </a>
+
+    <!-- Role heading (Figma 263:31547) with the top Apply button (263:31564) level with the title -->
+    <div class="job__head">
+      <p class="job__category"></p>
+      <h1 class="job__title"></h1>
+      <a class="job-apply job__apply-top" href="#">Apply Now</a>
+      <div class="job__meta">
+        <span class="job__type"></span>
+        <img src="assets/detail-divider.svg" alt="" />
+        <span class="job__location"></span>
+      </div>
+    </div>
+
+    <!-- Description (Figma 263:31560) -->
+    <div class="job__body">
+      <section class="job__section">
+        <h2>About the role:</h2>
+        <p class="job__about"></p>
+      </section>
+      <section class="job__section">
+        <h2>What you will do:</h2>
+        <ul class="job__responsibilities"></ul>
+      </section>
+      <section class="job__section">
+        <h2>Life at CashKaro:</h2>
+        <ul class="job__life"></ul>
+      </section>
+      <a class="job-apply job__apply-bottom" href="#">Apply Now</a>
+    </div>
+
+    <div class="job__missing" hidden>
+      <h1 class="job__title">This role isn’t open anymore</h1>
+      <p>It may have been filled or the link is out of date.</p>
+      <a class="job-apply" href="jobs.html">See all openings</a>
+    </div>
+  </main>
+
+  <script>
+    // Same fit as the home page: the 1440px design scaled to the viewport width (jobs.css applies it on desktop)
+    function fitPage() {
+      var scale = document.documentElement.clientWidth / 1440;
+      document.documentElement.style.setProperty("--page-scale", scale);
+    }
+    fitPage();
+    window.addEventListener("resize", fitPage);
+  </script>
+  <script src="jobs-data.js"></script>
+  <script src="job.js"></script>
+</body>
+</html>

@@ -29,6 +29,9 @@
   translate: -50% 0;
   background: url("assets/jobs-sky-grid.png") center / cover no-repeat;
   mix-blend-mode: soft-light;
+  /* Fade the grid out under the filter chips so the card area below stays plain white */
+  -webkit-mask-image: linear-gradient(to bottom, #000 480px, transparent 600px);
+  mask-image: linear-gradient(to bottom, #000 480px, transparent 600px);
 }
 
 /* ---------- Listing ---------- */

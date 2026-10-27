@@ -1,20 +1,6 @@
 // All openings: renders the job cards, filters them by search text and team
 (function () {
-  // Placeholder roles — replace with the real openings (or fetch from the ATS)
-  var JOBS = [
-    { category: "Product & Growth", title: "Senior Product Manager", type: "Full time", location: "Delhi", url: "#" },
-    { category: "Product & Growth", title: "Growth Marketing Manager", type: "Full time", location: "Gurugram", url: "#" },
-    { category: "Engineering", title: "Senior Backend Engineer", type: "Full time", location: "Gurugram", url: "#" },
-    { category: "Engineering", title: "Frontend Engineer", type: "Full time", location: "Gurugram", url: "#" },
-    { category: "Design", title: "Senior Product Designer", type: "Full time", location: "Gurugram", url: "#" },
-    { category: "Business", title: "Affiliate Partnerships Lead", type: "Full time", location: "Delhi", url: "#" },
-    { category: "Business", title: "Category Manager", type: "Full time", location: "Gurugram", url: "#" },
-    { category: "Marketing", title: "Copywriter", type: "Full time", location: "Gurugram", url: "#" },
-    { category: "Marketing", title: "Social Media Manager", type: "Full time", location: "Delhi", url: "#" },
-    { category: "Data & Analytics", title: "Data Analyst", type: "Full time", location: "Gurugram", url: "#" },
-    { category: "Customer Experience", title: "Customer Support Lead", type: "Full time", location: "Gurugram", url: "#" },
-    { category: "Finance", title: "Finance Manager", type: "Full time", location: "Gurugram", url: "#" }
-  ];
+  var JOBS = CK_JOBS;
 
   var grid = document.querySelector(".jobs-grid");
   var filters = document.querySelector(".jobs-filters");
@@ -33,7 +19,7 @@
 
   function cardHtml(job, i) {
     return (
-      '<a class="job-card" href="' + escapeHtml(job.url) + '" style="--i: ' + i + '">' +
+      '<a class="job-card" href="job.html?id=' + encodeURIComponent(job.id) + '" style="--i: ' + i + '">' +
         '<div class="job-card__body">' +
           '<div class="job-card__head">' +
             '<p class="job-card__category">' + escapeHtml(job.category.toUpperCase()) + "</p>" +
