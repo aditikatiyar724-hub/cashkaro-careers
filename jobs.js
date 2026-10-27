@@ -31,9 +31,9 @@
     });
   }
 
-  function cardHtml(job) {
+  function cardHtml(job, i) {
     return (
-      '<a class="job-card" href="' + escapeHtml(job.url) + '">' +
+      '<a class="job-card" href="' + escapeHtml(job.url) + '" style="--i: ' + i + '">' +
         '<div class="job-card__body">' +
           '<div class="job-card__head">' +
             '<p class="job-card__category">' + escapeHtml(job.category.toUpperCase()) + "</p>" +
@@ -58,6 +58,10 @@
     });
 
     grid.innerHTML = matches.map(cardHtml).join("");
+    // After the first paint, filtering re-deals the cards without the page-load delay
+    requestAnimationFrame(function () {
+      setTimeout(function () { grid.classList.add("is-settled"); }, 1500);
+    });
     // Soft staggered entrance when the team changes (not on every keystroke)
     if (animate) {
       Array.prototype.forEach.call(grid.children, function (card, i) {

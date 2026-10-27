@@ -246,6 +246,67 @@
   opacity: 0.7;
 }
 
+/* ---------- Page load: header, then the title block, then the cards, each softly rising in ---------- */
+
+.ck-header {
+  animation: jobs-drop-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.jobs-sky {
+  animation: jobs-fade 1.2s ease-out both;
+}
+
+.jobs-back,
+.jobs__title,
+.jobs-search,
+.jobs-filters,
+.jobs__count {
+  animation: soft-appear 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.jobs-back { animation-delay: 0.15s; }
+.jobs__title { animation-delay: 0.25s; }
+.jobs-search { animation-delay: 0.4s; }
+.jobs-filters { animation-delay: 0.55s; }
+.jobs__count { animation-delay: 0.65s; }
+
+/* Cards rise in one after another (--i from jobs.js); after load, filtering re-deals them quickly */
+.jobs-grid .job-card {
+  animation: soft-appear 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(0.75s + var(--i, 0) * 0.07s);
+}
+
+.jobs-grid.is-settled .job-card {
+  animation-duration: 0.6s;
+  animation-delay: calc(var(--i, 0) * 0.04s);
+}
+
+@keyframes jobs-drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes jobs-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ck-header,
+  .jobs-sky,
+  .jobs-back,
+  .jobs__title,
+  .jobs-search,
+  .jobs-filters,
+  .jobs__count,
+  .jobs-grid .job-card {
+    animation: none;
+  }
+}
+
 /* ---------- Responsive ---------- */
 
 /* Desktop: scale the page with the home page's --page-scale so the job cards match the home cards' size */
